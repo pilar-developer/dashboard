@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Mahasiswa</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Boxicons for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .info-row {
+            display: flex;
+            padding: 5px 0;
+        }
+        .info-row label {
+            flex: 0 0 250px; /* Tentukan lebar yang sama untuk label */
+            
+        }
+        .info-row .colon {
+            padding-right: 10px;
+        }
+
+         .table {
+            table-layout: auto; /* Membuat tabel mengikuti ukuran konten */
+            width: auto; /* Agar tabel hanya selebar konten */
+            margin: 0 auto;
+        }
+        .table thead th {
+            vertical-align: middle;
+            
+        }
+       
+        .table tfoot tr td {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Start Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li class="sidebar-header">
+                <img src="img/Logo SIU.png" alt="SIU Logo" class="sidebar-logo">
+                <h3 style="color: #000000;">SIU</h3>
+            </li>
+            <li>
+                <span class="menu-title">
+                    MENU UTAMA
+                </span>
+            </li>
+            <li>
+                <a href="index.html"><i class='bx bx-grid-alt bx-tada-hover me-2'></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="setting.html"><i class='bx bx-cog bx-tada-hover me-2'></i>
+                    <span>Pengaturan</span></a>
+            </li>
+            <li>
+                <span class="menu-title">MENU MAHASISWA</span>
+            </li>
+            <li>
+                <a href="active-class.html"><i class='bx bxs-book bx-tada-hover me-2'></i>
+                    <span>Kelas Aktif</span>
+                </a>
+            </li>
+            <li>
+                <a href="class-inactive.html"><i class='bx bx-book-open bx-tada-hover me-2'></i>
+                    <span>Kelas Tidak Aktif</span>
+                </a>
+            </li>
+            <li>
+                <a href="krs.html"><i class='bx bx-pencil bx-tada-hover me-2'></i>
+                    <span>Pengisian KRS</span>
+                </a>
+            </li>
+            <li>
+                <a href="finance.html"><i class='bx bx-wallet'></i>
+                    <span>Keuangan</span>
+                </a>
+            </li>
+            <li>
+                <a href="studi.html"><i class='bx bxs-graduation bx-tada-hover me-2'></i>
+                    <span>Hasil Studi</span></a>
+            </li>
+            <li>
+                <a href="dosen.html"><i class='bx bx-user'></i>
+                    <span>Data Dosen</span>
+                </a>
+            </li>
+            <li><span class="menu-title">MENU Lainnya</span></li>
+            <li>
+                <a href="saran.html"><i class='bx bx-conversation bx-tada-hover me-2'></i>
+                    <span>Saran & Kritik</span>
+                </a>
+            </li>
+            <li>
+                <a href="matrik.html"><i class='bx bx-align-justify bx-tada-hover me-2'></i>
+                    <span>Matrik Perkuliahan</span>
+                </a>
+            </li>
+            <li>
+                <a href="logout.html"><i class='bx bx-log-out bx-tada-hover me-2'></i>
+                    <span>Log Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Close Sidebar -->
+
+    <!-- Start Header -->
+    <div class="header" id="header">
+        <div class="toggle-btn" onclick="toggleSidebar()">
+            <i class='bx bx-menu'></i>
+        </div>
+        <!-- Dropdown Profil -->
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="profileDropdown"
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="img/avatar/avatar1.jpg" class="rounded-circle me-2" alt="User" width="40">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="profileDropdown"
+                style="width: 250px;">
+                <li class="px-3 py-2">
+                    <div class="d-flex align-items-center">
+                        <img src="img/avatar/avatar1.jpg" class="rounded-circle me-2" alt="User" width="40">
+                        <div>
+                            <h6 class="mb-0">Dashboard Mahasiswa</h6>
+                            <small class="text-muted">arif@example.com</small>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+
+                <li class="d-flex flex-column align-items-start">
+                    <a class="dropdown-item" href="#">Ganti Password</a>
+                    <span class="login-terakhir">Login Terakhir: 1 Jam yang lalu</span>
+                </li>
+
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+
+                <li><a class="dropdown-item" href="#"><i class="bx bx-log-out me-2"></i> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Close Header -->
+
+    <!-- Start Content -->
+    <div class="content" id="content">
+        <div class="row">
+            <div class="card p-3">
+                <h5>
+                    <i class='bx bxs-graduation bx-tada-hover me-2'></i>
+                    Hasil Prestasi Akademik
+                </h5>
+                <hr>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <a href="#" class="btn btn-info">
+                                <i class='bx bx-arrow-back bx-tada-hover me-2'></i>
+                                Kembali
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <form action="#" method="get">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Semester</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="Semua">Semua</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class='bx bx-printer'></i>
+                                    Print
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="info-row">
+                            <label>NIM</label>
+                            <span class="colon">: 0000111</span>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <label>Nama Mahasiswa</label>
+                            <span>: Muhamad Arif</span>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <label>Kelas</label>
+                            <span>: SI21R2</span>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <label>Tempat, Tanggal Lahir</label>
+                            <span>: Jakarta, 17 Agustus 1945</span>
+                        </div>
+                        <hr>
+                        <div class="info-row">
+                            <label>Program Studi</label>
+                            <span>: Sistem Informasi</span>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <!-- Tabel Semester I -->
+                        <div class="col-md-6">
+                            <h5>Semester : I</h5>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">No</th>
+                                        <th rowspan="2">Kode</th>
+                                        <th rowspan="2">Mata Kuliah</th>
+                                        <th rowspan="2">SKS</th>
+                                        <th colspan="2">Nilai</th>
+                                        <th rowspan="2">Mutu<br>(SKS x Nilai)</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Huruf</th>
+                                        <th>Angka</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>S1005</td>
+                                        <td>Pengantar Teknologi Informasi</td>
+                                        <td>2</td>
+                                        <td>B</td>
+                                        <td>3</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>S19103</td>
+                                        <td>Aplikasi Komputer</td>
+                                        <td>4</td>
+                                        <td>C</td>
+                                        <td>2</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>S19113</td>
+                                        <td>Bahasa Indonesia</td>
+                                        <td>2</td>
+                                        <td>B</td>
+                                        <td>3</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>S19109</td>
+                                        <td>Sistem Operasi</td>
+                                        <td>2</td>
+                                        <td>A</td>
+                                        <td>4</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>S19101</td>
+                                        <td>Bahasa Inggris I</td>
+                                        <td>4</td>
+                                        <td>A</td>
+                                        <td>4</td>
+                                        <td>16</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>S19107</td>
+                                        <td>Kalkulus</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                        <td>3</td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>S19111</td>
+                                        <td>Algoritma dan Pemrograman</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                        <td>3</td>
+                                        <td>12</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3">Jumlah</td>
+                                        <td>20</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>62</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Indeks Prestasi</td>
+                                        <td colspan="4">3.10</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Indeks Prestasi Kumulatif</td>
+                                        <td colspan="4">3.10</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Predikat</td>
+                                        <td colspan="4">Memuaskan</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                        <!-- Tabel Semester II -->
+                        <div class="col-md-6">
+                            <h5>Semester : II</h5>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">No</th>
+                                        <th rowspan="2">Kode</th>
+                                        <th rowspan="2">Mata Kuliah</th>
+                                        <th rowspan="2">SKS</th>
+                                        <th colspan="2">Nilai</th>
+                                        <th rowspan="2">Mutu<br>(SKS x Nilai)</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Huruf</th>
+                                        <th>Angka</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>S19102</td>
+                                        <td>Bahasa Inggris II</td>
+                                        <td>4</td>
+                                        <td>A</td>
+                                        <td>4</td>
+                                        <td>16</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>S19104</td>
+                                        <td>Matematika Diskrit</td>
+                                        <td>2</td>
+                                        <td>B</td>
+                                        <td>3</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>S19106</td>
+                                        <td>Struktur Data</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                        <td>3</td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>S19108</td>
+                                        <td>Pemrograman Berorientasi Objek I</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                        <td>3</td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>S19110</td>
+                                        <td>Pengantar Manajemen</td>
+                                        <td>2</td>
+                                        <td>B</td>
+                                        <td>3</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>S19112</td>
+                                        <td>Konsep Sistem Informasi</td>
+                                        <td>2</td>
+                                        <td>B</td>
+                                        <td>3</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>S19114</td>
+                                        <td>Sistem Berkas</td>
+                                        <td>2</td>
+                                        <td>A</td>
+                                        <td>4</td>
+                                        <td>8</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3">Jumlah</td>
+                                        <td>20</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>66</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Indeks Prestasi</td>
+                                        <td colspan="4">3.30</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Indeks Prestasi Kumulatif</td>
+                                        <td colspan="4">3.20</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Predikat</td>
+                                        <td colspan="4">Memuaskan</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                        <!-- Tabel Semester II -->
+                        <div class="col-md-6">
+                            <h5>Semester : III</h5>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">No</th>
+                                        <th rowspan="2">Kode</th>
+                                        <th rowspan="2">Mata Kuliah</th>
+                                        <th rowspan="2">SKS</th>
+                                        <th colspan="2">Nilai</th>
+                                        <th rowspan="2">Mutu<br>(SKS x Nilai)</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Huruf</th>
+                                        <th>Angka</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>S19102</td>
+                                        <td>Bahasa Inggris II</td>
+                                        <td>4</td>
+                                        <td>A</td>
+                                        <td>4</td>
+                                        <td>16</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>S19104</td>
+                                        <td>Matematika Diskrit</td>
+                                        <td>2</td>
+                                        <td>B</td>
+                                        <td>3</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>S19106</td>
+                                        <td>Struktur Data</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                        <td>3</td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>S19108</td>
+                                        <td>Pemrograman Berorientasi Objek I</td>
+                                        <td>4</td>
+                                        <td>B</td>
+                                        <td>3</td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>S19110</td>
+                                        <td>Pengantar Manajemen</td>
+                                        <td>2</td>
+                                        <td>B</td>
+                                        <td>3</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>S19112</td>
+                                        <td>Konsep Sistem Informasi</td>
+                                        <td>2</td>
+                                        <td>B</td>
+                                        <td>3</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>S19114</td>
+                                        <td>Sistem Berkas</td>
+                                        <td>2</td>
+                                        <td>A</td>
+                                        <td>4</td>
+                                        <td>8</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3">Jumlah</td>
+                                        <td>20</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>66</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Indeks Prestasi</td>
+                                        <td colspan="4">3.30</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Indeks Prestasi Kumulatif</td>
+                                        <td colspan="4">3.20</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Predikat</td>
+                                        <td colspan="4">Memuaskan</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Close Content -->
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <!-- DataTables -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+</body>
+
+</html>

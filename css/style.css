@@ -38,7 +38,21 @@ body {
     display: flex;
     align-items: center;
     font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
 }
+
+.sidebar ul li a:hover {
+    background-color: #e8f0fe;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #0056b3;
+}
+
+/* .sidebar ul li a.active {
+    background-color: #007bff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #fff;
+} */
 
 .sidebar ul li a i {
     font-size: 20px;
