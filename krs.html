@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Mahasiswa</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Boxicons for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Start Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li class="sidebar-header">
+                <img src="img/Logo SIU.png" alt="SIU Logo" class="sidebar-logo">
+                <h3 style="color: #000000;">SIU</h3>
+            </li>
+            <li>
+                <span class="menu-title">
+                    MENU UTAMA
+                </span>
+            </li>
+            <li>
+                <a href="index.html"><i class='bx bx-grid-alt bx-tada-hover me-2'></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="setting.html"><i class='bx bx-cog bx-tada-hover me-2'></i>
+                    <span>Pengaturan</span></a>
+            </li>
+            <li>
+                <span class="menu-title">MENU MAHASISWA</span>
+            </li>
+            <li>
+                <a href="active-class.html"><i class='bx bxs-book bx-tada-hover me-2'></i>
+                    <span>Kelas Aktif</span>
+                </a>
+            </li>
+            <li>
+                <a href="class-inactive.html"><i class='bx bx-book-open bx-tada-hover me-2'></i>
+                    <span>Kelas Tidak Aktif</span>
+                </a>
+            </li>
+            <li>
+                <a href="krs.html"><i class='bx bx-pencil bx-tada-hover me-2'></i>
+                    <span>Pengisian KRS</span>
+                </a>
+            </li>
+            <li>
+                <a href="finance.html"><i class='bx bx-wallet'></i>
+                    <span>Keuangan</span>
+                </a>
+            </li>
+            <li>
+                <a href="studi.html"><i class='bx bxs-graduation bx-tada-hover me-2'></i>
+                    <span>Hasil Studi</span></a>
+            </li>
+            <li>
+                <a href="dosen.html"><i class='bx bx-user'></i>
+                    <span>Data Dosen</span>
+                </a>
+            </li>
+            <li><span class="menu-title">MENU Lainnya</span></li>
+            <li>
+                <a href="saran.html"><i class='bx bx-conversation bx-tada-hover me-2'></i>
+                    <span>Saran & Kritik</span>
+                </a>
+            </li>
+            <li>
+                <a href="matrik.html"><i class='bx bx-align-justify bx-tada-hover me-2'></i>
+                    <span>Matrik Perkuliahan</span>
+                </a>
+            </li>
+            <li>
+                <a href="logout.html"><i class='bx bx-log-out bx-tada-hover me-2'></i>
+                    <span>Log Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Close Sidebar -->
+
+    <!-- Start Header -->
+    <div class="header" id="header">
+        <div class="toggle-btn" onclick="toggleSidebar()">
+            <i class='bx bx-menu'></i>
+        </div>
+        <!-- Dropdown Profil -->
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="profileDropdown"
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="img/avatar/avatar1.jpg" class="rounded-circle me-2" alt="User" width="40">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="profileDropdown"
+                style="width: 250px;">
+                <li class="px-3 py-2">
+                    <div class="d-flex align-items-center">
+                        <img src="img/avatar/avatar1.jpg" class="rounded-circle me-2" alt="User" width="40">
+                        <div>
+                            <h6 class="mb-0">Dashboard Mahasiswa</h6>
+                            <small class="text-muted">arif@example.com</small>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+
+                <li class="d-flex flex-column align-items-start">
+                    <a class="dropdown-item" href="#">Ganti Password</a>
+                    <span class="login-terakhir">Login Terakhir: 1 Jam yang lalu</span>
+                </li>
+
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+
+                <li><a class="dropdown-item" href="#"><i class="bx bx-log-out me-2"></i> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Close Header -->
+
+    <!-- Start Content -->
+    <div class="content" id="content">
+        <div class="row">
+            <h5>
+                Kartu Rencana Studi Mahasiswa
+            </h5>
+            <p style="color: red; font-weight: bold;">
+                <i class='bx bx-bell bx-tada-hover me-2'></i>
+                Catatan sebelum pengisian KRS diwajibkan melunasikan UKT
+            </p>
+
+            <div class="row mt-2">
+                <div class="card">
+                    <h5>
+                        Belum mengisi KRS
+                    </h5>
+                    <hr>
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr class="table-info">
+                                    <th>Mata Kuliah</th>
+                                    <th>SKS</th>
+                                    <th>Hari</th>
+                                    <th>Jam Mulai</th>
+                                    <th>Jam Selesai</th>
+                                    <th>Semester</th>
+                                    <th>Tahun Periode</th>
+                                    <th>Dosen</th>
+                                    <th>Keterangan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mata Kuliah 1</td>
+                                    <td>4</td>
+                                    <td>Senin</td>
+                                    <td>08:00</td>
+                                    <td>11:40</td>
+                                    <td>3/Ganjil</td>
+                                    <td>2023/2024</td>
+                                    <td>Dosen 1</td>
+                                    <td>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Pilih</option>
+                                            <option value="Ikut">Ikut</option>
+                                            <option value="Tidak Ikut">Tidak Ikut</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Mata Kuliah 2</td>
+                                    <td>2</td>
+                                    <td>Selasa</td>
+                                    <td>08:00</td>
+                                    <td>09:40</td>
+                                    <td>3/Ganjil</td>
+                                    <td>2023/2024</td>
+                                    <td>Dosen 2</td>
+                                    <td>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Pilih</option>
+                                            <option value="Ikut">Ikut</option>
+                                            <option value="Tidak Ikut">Tidak Ikut</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Mata Kuliah 3</td>
+                                    <td>2</td>
+                                    <td>Selasa</td>
+                                    <td>10:00</td>
+                                    <td>11:40</td>
+                                    <td>3/Ganjil</td>
+                                    <td>2023/2024</td>
+                                    <td>Dosen 3</td>
+                                    <td>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Pilih</option>
+                                            <option value="Ikut">Ikut</option>
+                                            <option value="Tidak Ikut">Tidak Ikut</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Mata Kuliah 4</td>
+                                    <td>4</td>
+                                    <td>Rabu</td>
+                                    <td>13:00</td>
+                                    <td>16:40</td>
+                                    <td>3/Ganjil</td>
+                                    <td>2023/2024</td>
+                                    <td>Dosen 1</td>
+                                    <td>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Pilih</option>
+                                            <option value="Ikut">Ikut</option>
+                                            <option value="Tidak Ikut">Tidak Ikut</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Mata Kuliah 5</td>
+                                    <td>2</td>
+                                    <td>Kamis</td>
+                                    <td>13:00</td>
+                                    <td>14:40</td>
+                                    <td>3/Ganjil</td>
+                                    <td>2023/2024</td>
+                                    <td>Dosen 4</td>
+                                    <td>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Pilih</option>
+                                            <option value="Ikut">Ikut</option>
+                                            <option value="Tidak Ikut">Tidak Ikut</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Mata Kuliah 6</td>
+                                    <td>2</td>
+                                    <td>Kamis</td>
+                                    <td>15:00</td>
+                                    <td>16:40</td>
+                                    <td>3/Ganjil</td>
+                                    <td>2023/2024</td>
+                                    <td>Dosen 6</td>
+                                    <td>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Pilih</option>
+                                            <option value="Ikut">Ikut</option>
+                                            <option value="Tidak Ikut">Tidak Ikut</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Mata Kuliah 7</td>
+                                    <td>4</td>
+                                    <td>Jumat</td>
+                                    <td>08:00</td>
+                                    <td>11:40</td>
+                                    <td>3/Ganjil</td>
+                                    <td>2023/2024</td>
+                                    <td>Dosen 2</td>
+                                    <td>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Pilih</option>
+                                            <option value="Ikut">Ikut</option>
+                                            <option value="Tidak Ikut">Tidak Ikut</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Close Content -->
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <!-- DataTables -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+</body>
+
+</html>
