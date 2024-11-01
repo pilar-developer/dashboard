@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Mahasiswa</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Boxicons for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
+    <link rel="web icon" type="photo" href="img/Logo SIU.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Start Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li class="sidebar-header">
+                <img src="img/Logo SIU.png" alt="SIU Logo" class="sidebar-logo">
+                <h3 style="color: #000000;">SIU</h3>
+            </li>
+            <li>
+                <span class="menu-title">
+                    MENU UTAMA
+                </span>
+            </li>
+            <li>
+                <a href="index.html"><i class='bx bx-grid-alt bx-tada-hover me-2'></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="setting.html"><i class='bx bx-cog bx-tada-hover me-2'></i>
+                    <span>Pengaturan</span></a>
+            </li>
+            <li>
+                <span class="menu-title">MENU MAHASISWA</span>
+            </li>
+            <li>
+                <a href="active-class.html"><i class='bx bxs-book bx-tada-hover me-2'></i>
+                    <span>Kelas Aktif</span>
+                </a>
+            </li>
+            <li>
+                <a href="class-inactive.html"><i class='bx bx-book-open bx-tada-hover me-2'></i>
+                    <span>Kelas Tidak Aktif</span>
+                </a>
+            </li>
+            <li>
+                <a href="krs.html"><i class='bx bx-pencil bx-tada-hover me-2'></i>
+                    <span>Pengisian KRS</span>
+                </a>
+            </li>
+            <li>
+                <a href="finance.html"><i class='bx bx-wallet'></i>
+                    <span>Keuangan</span>
+                </a>
+            </li>
+            <li>
+                <a href="studi.html"><i class='bx bxs-graduation bx-tada-hover me-2'></i>
+                    <span>Hasil Studi</span></a>
+            </li>
+            <li>
+                <a href="dosen.html"><i class='bx bx-user'></i>
+                    <span>Data Dosen</span>
+                </a>
+            </li>
+            <li><span class="menu-title">MENU Lainnya</span></li>
+            <li>
+                <a href="saran.html"><i class='bx bx-conversation bx-tada-hover me-2'></i>
+                    <span>Saran & Kritik</span>
+                </a>
+            </li>
+            <li>
+                <a href="matrik.html"><i class='bx bx-align-justify bx-tada-hover me-2'></i>
+                    <span>Matrik Perkuliahan</span>
+                </a>
+            </li>
+            <li>
+                <a href="logout.html"><i class='bx bx-log-out bx-tada-hover me-2'></i>
+                    <span>Log Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Close Sidebar -->
+
+    <!-- Start Header -->
+    <div class="header" id="header">
+        <div class="toggle-btn" onclick="toggleSidebar()">
+            <i class='bx bx-menu'></i>
+        </div>
+        <!-- Dropdown Profil -->
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="profileDropdown"
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="img/avatar/avatar1.jpg" class="rounded-circle me-2" alt="User" width="40">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="profileDropdown"
+                style="width: 250px;">
+                <li class="px-3 py-2">
+                    <div class="d-flex align-items-center">
+                        <img src="img/avatar/avatar1.jpg" class="rounded-circle me-2" alt="User" width="40">
+                        <div>
+                            <h6 class="mb-0">Dashboard Mahasiswa</h6>
+                            <small class="text-muted">arif@example.com</small>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+
+                <li class="d-flex flex-column align-items-start">
+                    <a class="dropdown-item" href="#">Ganti Password</a>
+                    <span class="login-terakhir">Login Terakhir: 1 Jam yang lalu</span>
+                </li>
+
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+
+                <li><a class="dropdown-item" href="#"><i class="bx bx-log-out me-2"></i> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Close Header -->
+
+    <!-- Start Content -->
+    <div class="content" id="content">
+        <div class="row">
+            <div class="card p-3">
+                <div class="col-4">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Pilih</option>
+                        <option value="Senin">Senin</option>
+                        <option value="Selasa">Selasa</option>
+                        <option value="Rabu">Rabu</option>
+                        <option value="Kamis">Kamis</option>
+                        <option value="Jumat">Jumat</option>
+                        <option value="Sabtu">Sabtu</option>
+                        <option value="Minggu">Minggu</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="card">
+                    <h6>
+                        <i class='bx bx-calendar-check'></i>
+                        Hari Senin
+                    </h6>
+                    <hr>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <td>Waktu</td>
+                                <td>Ruang 1</td>
+                                <td>Ruang 2</td>
+                                <td>Ruang 3</td>
+                                <td>Ruang 4</td>
+                                <td>Ruang 5</td>
+                                <td>Ruang 6</td>
+                                <td>Ruang 7</td>
+                                <td>Ruang 8</td>
+                                <td>Ruang 9</td>
+                                <td>Ruang 10</td>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>08:00 - 09:40</td>
+                                    <td>
+                                        Kelas 1 <br>
+                                        Mata Kuliah 1 <br>
+                                        Dosen 1
+                                    </td>
+                                    <td>Dosen 2</td>
+                                    <td>Dosen 3</td>
+                                    <td>Dosen 4</td>
+                                    <td>Dosen 5</td>
+                                    <td>Dosen 6</td>
+                                    <td>Dosen 7</td>
+                                    <td>Dosen 8</td>
+                                    <td>Dosen 9</td>
+                                    <td>Dosen 10</td>
+                                </tr>
+                                <tr>
+                                    <td>10:00 - 11:40</td>
+                                    <td>
+                                        Kelas 1 <br>
+                                        Mata Kuliah 1 <br>
+                                        Dosen 1
+                                    </td>
+                                    <td>
+                                        Kelas 2 <br>
+                                        Mata Kuliah 2 <br>
+                                        Dosen 2
+                                    </td>
+                                    <td>
+                                        Kelas 3 <br>
+                                        Mata Kuliah 3 <br>
+                                        Dosen 3
+                                    </td>
+                                    <td>
+                                        Kelas 4 <br>
+                                        Mata Kuliah 4 <br>
+                                        Dosen 4
+                                    </td>
+                                    <td>
+                                        Kelas 5 <br>
+                                        Mata Kuliah 5 <br>
+                                        Dosen 5
+                                    </td>
+                                    <td>
+                                        Kelas 6 <br>
+                                        Mata Kuliah 6 <br>
+                                        Dosen 6
+                                    </td>
+                                    <td>
+                                        Kelas 7 <br>
+                                        Mata Kuliah 7 <br>
+                                        Dosen 7
+                                    </td>
+                                    <td>
+                                        Kelas 8 <br>
+                                        Mata Kuliah 8 <br>
+                                        Dosen 8
+                                    </td>
+                                    <td>
+                                        Kelas 9 <br>
+                                        Mata Kuliah 9 <br>
+                                        Dosen 9
+                                    </td>
+                                    <td>
+                                        Kelas 10 <br>
+                                        Mata Kuliah 10 <br>
+                                        Dosen 10
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>13:00 - 14:40</td>
+                                    <td>
+                                        Kelas 1 <br>
+                                        Mata Kuliah 1 <br>
+                                        Dosen 1
+                                    </td>
+                                    <td>Dosen 2</td>
+                                    <td>Dosen 3</td>
+                                    <td>Dosen 4</td>
+                                    <td>Dosen 5</td>
+                                    <td>Dosen 6</td>
+                                    <td>Dosen 7</td>
+                                    <td>Dosen 8</td>
+                                    <td>Dosen 9</td>
+                                    <td>Dosen 10</td>
+                                </tr>
+                                <tr>
+                                    <td>15:00 - 16:40</td>
+                                    <td>
+                                        Kelas 1 <br>
+                                        Mata Kuliah 1 <br>
+                                        Dosen 1
+                                    </td>
+                                    <td>Dosen 2</td>
+                                    <td>Dosen 3</td>
+                                    <td>Dosen 4</td>
+                                    <td>Dosen 5</td>
+                                    <td>Dosen 6</td>
+                                    <td>Dosen 7</td>
+                                    <td>Dosen 8</td>
+                                    <td>Dosen 9</td>
+                                    <td>Dosen 10</td>
+                                </tr>
+                                <tr>
+                                    <td>18:30 - 20:00</td>
+                                    <td>
+                                        Kelas 1 <br>
+                                        Mata Kuliah 1 <br>
+                                        Dosen 1
+                                    </td>
+                                    <td>Dosen 2</td>
+                                    <td>Dosen 3</td>
+                                    <td>Dosen 4</td>
+                                    <td>Dosen 5</td>
+                                    <td>Dosen 6</td>
+                                    <td>Dosen 7</td>
+                                    <td>Dosen 8</td>
+                                    <td>Dosen 9</td>
+                                    <td>Dosen 10</td>
+                                </tr>
+                                <tr>
+                                    <td>20:00 - 21:30</td>
+                                    <td>
+                                        Kelas 1 <br>
+                                        Mata Kuliah 1 <br>
+                                        Dosen 1
+                                    </td>
+                                    <td>Dosen 2</td>
+                                    <td>Dosen 3</td>
+                                    <td>Dosen 4</td>
+                                    <td>Dosen 5</td>
+                                    <td>Dosen 6</td>
+                                    <td>Dosen 7</td>
+                                    <td>Dosen 8</td>
+                                    <td>Dosen 9</td>
+                                    <td>Dosen 10</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Close Content -->
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <!-- DataTables -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+</body>
+
+</html>

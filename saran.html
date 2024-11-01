@@ -13,6 +13,22 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
     <link rel="web icon" type="photo" href="img/Logo SIU.png">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Pustaka TinyMCE -->
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#editor', // Targetkan elemen textarea dengan id "editor"
+            height: 300,
+            menubar: true,
+            plugins: 'lists link image table code wordcount',
+            toolbar: 'undo redo | formatselect | bold italic | ' +
+                'alignleft aligncenter alignright alignjustify | ' +
+                'bullist numlist outdent indent | link image | ' +
+                'fontsizeselect',
+            fontsize_formats: '8pt 10pt 11pt 12pt 14pt 18pt 24pt 36pt',
+            branding: false, // Menghilangkan branding TinyMCE
+        });
+    </script>
 </head>
 
 <body>
@@ -134,54 +150,30 @@
     <!-- Start Content -->
     <div class="content" id="content">
         <div class="row">
-            <h5>
-                Update Data Diri
-            </h5>
             <p style="color: red; font-weight: bold;">
                 <i class='bx bx-bell bx-tada-hover me-2'></i>
-                Catatan Buatlah Password Minimal 8 karakter serta unik dan sulit ditebak
+                Sampaikan Saran & Kritik dengan Baik
             </p>
-            <div class="card p-3">
-                <form action="#" method="get">
-                    <div class="mb-3">
-                        <label class="form-label">Nama Lengkap</label>
-                        <input type="text" value="" class="form-control" placeholder="Nama Lengkap Mahasiswa" disabled>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Tempat Lahir</label>
-                        <input type="text" value="" class="form-control" placeholder="Tempat Lahir" disabled>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Tanggal Lahir</label>
-                        <input type="date" value="" class="form-control" disabled>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Alamat Email</label>
-                        <input type="email" value="" class="form-control" placeholder="your@email.com" disabled>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input type="password" class="form-control" placeholder="Password">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Konfirmasi Password</label>
-                        <input type="password" class="form-control" placeholder="Konfirmasi Password">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Photo</label>
-                        <input type="file" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <img src="img/avatar/avatar3.png" alt="" style="width: 250px; height: auto; border-radius: 50%;">
-                    </div>
-                    <div class="mb-3">
-                        <button type="submit" class="btn btn-primary w-50">
-                            <i class='bx bx-send bx-tada-hover me-2'></i>
-                            Simpan
-                        </button>
-                    </div>
-                </form>
+        </div>
 
+        <div class="row mt-2">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">
+                            <i class='bx bx-reset'></i>
+                            Tulis Saran & Kritik sebagai bentuk Aspirasi kepada Kampus
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- TinyMCE Text Editor -->
+                        <textarea id="editor">Silakan tulis saran & kritik Anda di sini...</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-info">
+                        <i class='bx bx-send bx-tada-hover ml-2'></i>
+                        Kirim Saran & Kritik
+                    </button>
+                </div>
             </div>
         </div>
     </div>
