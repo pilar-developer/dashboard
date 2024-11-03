@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Mahasiswa</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Boxicons for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
+    <link rel="web icon" type="photo" href="img/Logo SIU.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Start Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li class="sidebar-header">
+                <img src="img/Logo SIU.png" alt="SIU Logo" class="sidebar-logo">
+                <h3 style="color: #000000;">SIU</h3>
+            </li>
+            <li>
+                <span class="menu-title">
+                    MENU UTAMA
+                </span>
+            </li>
+            <li>
+                <a href="index.html"><i class='bx bx-grid-alt bx-tada-hover me-2'></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="setting.html"><i class='bx bx-cog bx-tada-hover me-2'></i>
+                    <span>Pengaturan</span></a>
+            </li>
+            <li>
+                <span class="menu-title">MENU MAHASISWA</span>
+            </li>
+            <li>
+                <a href="active-class.html"><i class='bx bxs-book bx-tada-hover me-2'></i>
+                    <span>Kelas Aktif</span>
+                </a>
+            </li>
+            <li>
+                <a href="class-inactive.html"><i class='bx bx-book-open bx-tada-hover me-2'></i>
+                    <span>Kelas Tidak Aktif</span>
+                </a>
+            </li>
+            <li>
+                <a href="krs.html"><i class='bx bx-pencil bx-tada-hover me-2'></i>
+                    <span>Pengisian KRS</span>
+                </a>
+            </li>
+            <li>
+                <a href="finance.html"><i class='bx bx-wallet'></i>
+                    <span>Keuangan</span>
+                </a>
+            </li>
+            <li>
+                <a href="studi.html"><i class='bx bxs-graduation bx-tada-hover me-2'></i>
+                    <span>Hasil Studi</span></a>
+            </li>
+            <li>
+                <a href="dosen.html"><i class='bx bx-user'></i>
+                    <span>Data Dosen</span>
+                </a>
+            </li>
+            <li><span class="menu-title">MENU Lainnya</span></li>
+            <li>
+                <a href="saran.html"><i class='bx bx-conversation bx-tada-hover me-2'></i>
+                    <span>Saran & Kritik</span>
+                </a>
+            </li>
+            <li>
+                <a href="matrik.html"><i class='bx bx-align-justify bx-tada-hover me-2'></i>
+                    <span>Matrik Perkuliahan</span>
+                </a>
+            </li>
+            <li>
+                <a href="logout.html"><i class='bx bx-log-out bx-tada-hover me-2'></i>
+                    <span>Log Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Close Sidebar -->
+
+    <!-- Start Header -->
+    <div class="header" id="header">
+        <div class="toggle-btn" onclick="toggleSidebar()">
+            <i class='bx bx-menu'></i>
+        </div>
+        <!-- Dropdown Profil -->
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="profileDropdown"
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="img/avatar/avatar1.jpg" class="rounded-circle me-2" alt="User" width="40">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="profileDropdown"
+                style="width: 250px;">
+                <li class="px-3 py-2">
+                    <div class="d-flex align-items-center">
+                        <img src="img/avatar/avatar1.jpg" class="rounded-circle me-2" alt="User" width="40">
+                        <div>
+                            <h6 class="mb-0">Dashboard Mahasiswa</h6>
+                            <small class="text-muted">arif@example.com</small>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+
+                <li class="d-flex flex-column align-items-start">
+                    <a class="dropdown-item" href="#">Ganti Password</a>
+                    <span class="login-terakhir">Login Terakhir: 1 Jam yang lalu</span>
+                </li>
+
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+
+                <li><a class="dropdown-item" href="#"><i class="bx bx-log-out me-2"></i> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Close Header -->
+
+    <!-- Start Content -->
+    <div class="content" id="content">
+        <div class="row">
+            <h5>INFO KELAS</h5>
+            <div class="mt-2 col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="p-2 border rounded d-flex justify-content-between align-items-center">
+                        <span>Kelas 1 :</span>
+                        <span>SIR3121R2</span>
+                    </div>
+                    <div class="p-2 border rounded d-flex justify-content-between align-items-center">
+                        <span>Mata Kuliah :</span>
+                        <span>Mata Kuliah 1</span>
+                    </div>
+                    <div class="p-2 border rounded d-flex justify-content-between align-items-center">
+                        <span>SKS :</span>
+                        <span>2</span>
+                    </div>
+                    <div class="p-2 border rounded d-flex justify-content-between align-items-center">
+                        <span>Semester :</span>
+                        <span>1/Ganjil</span>
+                    </div>
+                    <div class="p-2 border rounded d-flex justify-content-between align-items-center">
+                        <span>Tahun Ajaran :</span>
+                        <span>2024/2025</span>
+                    </div>
+
+                    <div class="mt-3 p-2 border rounded d-flex justify-content-between align-items-center">
+                        <span>Hari :</span>
+                        <span>Senin</span>
+                    </div>
+                    <div class="p-2 border rounded d-flex justify-content-between align-items-center">
+                        <span>Jam Mulai :</span>
+                        <span>08:00</span>
+                    </div>
+                    <div class="p-2 border rounded d-flex justify-content-between align-items-center">
+                        <span>Jam Selesai :</span>
+                        <span>11:40</span>
+                    </div>
+                    <div class="p-2 border rounded d-flex justify-content-between align-items-center">
+                        <span>Ruang :</span>
+                        <span>Lab Komputer 1</span>
+                    </div>
+
+                    <div class="mt-3 p-2 border rounded d-flex justify-content-between align-items-center">
+                        <span>Dosen :</span>
+                        <span style="color: #C71585;">Dosen 11010</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-2 col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="transition-card p-2 border rounded d-flex justify-content-between align-items-center">
+                        <a href="#" style="text-decoration: none; color: #21c715;">
+                            <span>Pertemuan 1 :</span>
+                        </a>
+                        <a href="#" style="text-decoration: none; color: #21c715;">
+                            <span>01 Desember 2024</span>
+                        </a>
+                    </div>
+
+                    <div class="transition-card p-2 border rounded d-flex justify-content-between align-items-center">
+                        <a href="#" style="text-decoration: none; color: #21c715;">
+                            <span>Pertemuan 2 :</span>
+                        </a>
+                        <a href="#" style="text-decoration: none; color: #21c715;">
+                            <span>08 Desember 2024</span>
+                        </a>
+                    </div>
+                    <div class="transition-card p-2 border rounded d-flex justify-content-between align-items-center">
+                        <a href="#" style="text-decoration: none; color: #21c715;">
+                            <span>Pertemuan 3 :</span>
+                        </a>
+                        <a href="#" style="text-decoration: none; color: #21c715;">
+                            <span>15 Desember 2024</span>
+                        </a>
+                    </div>
+                    <div class="transition-card p-2 border rounded d-flex justify-content-between align-items-center">
+                        <a href="#" style="text-decoration: none; color: #21c715;">
+                            <span>Pertemuan 4 :</span>
+                        </a>
+                        <a href="#" style="text-decoration: none; color: #21c715;">
+                            <span>20 Desember 2024</span>
+                        </a>
+                    </div>
+                    <div class="transition-card p-2 border rounded d-flex justify-content-between align-items-center">
+                        <a href="#" style="text-decoration: none; color: #21c715;">
+                            <span>Pertemuan 5 :</span>
+                        </a>
+                        <a href="#" style="text-decoration: none; color: #21c715;">
+                            <span>26 Desember 2024</span>
+                        </a>
+                    </div>
+                    <div class="transition-card p-2 border rounded d-flex justify-content-between align-items-center">
+                        <a href="#" style="text-decoration: none; color: #21c715;">
+                            <span>Pertemuan 6 :</span>
+                        </a>
+                        <a href="#" style="text-decoration: none; color: #21c715;">
+                            <span>01 Januari 2025</span>
+                        </a>
+                    </div>
+                    <div class="transition-card p-2 border rounded d-flex justify-content-between align-items-center">
+                        <a href="#" style="text-decoration: none; color: #21c715;">
+                            <span>Pertemuan 7 :</span>
+                        </a>
+                        <a href="#" style="text-decoration: none; color: #21c715;">
+                            <span>06 Januari 2025</span>
+                        </a>
+                    </div>
+                    <div class="transition-card p-2 border rounded d-flex justify-content-between align-items-center">
+                        <a href="#" style="text-decoration: none; color: #21c715;">
+                            <span>Pertemuan 8 :</span>
+                        </a>
+                        <a href="#" style="text-decoration: none; color: #21c715;">
+                            <span>14 Januari 2025</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Close Content -->
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <!-- DataTables -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+</body>
+
+</html>

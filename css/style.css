@@ -177,8 +177,17 @@ body {
     padding: 5px 0;
 }
 
-
 /* Close Card */
+
+/* Css unutk detail class */
+.transition-card {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.transition-card:hover {
+    transform: scale(1.05);
+    background-color: #f7f0fa;
+}
 
 /* Responsive */
 @media (max-width: 768px) and (max-width: 1200px) {
