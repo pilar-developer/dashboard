@@ -13,6 +13,19 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
     <link rel="web icon" type="photo" href="img/Logo SIU.png">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .sticky-column {
+        position: sticky;
+        left: 0;
+        background-color: #fff; /* Sesuaikan dengan warna tabel */
+        z-index: 1;
+        border-right: 1px solid #dee2e6; /* Garis pemisah */
+    }
+    </style>
 </head>
 
 <body>
@@ -163,7 +176,7 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered">
                             <thead>
-                                <td>Waktu</td>
+                                <td class="sticky-column">Waktu</td>
                                 <td>Ruang 1</td>
                                 <td>Ruang 2</td>
                                 <td>Ruang 3</td>
@@ -177,24 +190,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>08:00 - 09:40</td>
-                                    <td>
-                                        Kelas 1 <br>
-                                        Mata Kuliah 1 <br>
-                                        Dosen 1
-                                    </td>
-                                    <td>Dosen 2</td>
-                                    <td>Dosen 3</td>
-                                    <td>Dosen 4</td>
-                                    <td>Dosen 5</td>
-                                    <td>Dosen 6</td>
-                                    <td>Dosen 7</td>
-                                    <td>Dosen 8</td>
-                                    <td>Dosen 9</td>
-                                    <td>Dosen 10</td>
-                                </tr>
-                                <tr>
-                                    <td>10:00 - 11:40</td>
+                                    <td class="sticky-column">08:00 - 09:40</td>
                                     <td>
                                         Kelas 1 <br>
                                         Mata Kuliah 1 <br>
@@ -247,7 +243,60 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>13:00 - 14:40</td>
+                                    <td class="sticky-column">10:00 - 11:40</td>
+                                    <td>
+                                        Kelas 1 <br>
+                                        Mata Kuliah 1 <br>
+                                        Dosen 1
+                                    </td>
+                                    <td>
+                                        Kelas 2 <br>
+                                        Mata Kuliah 2 <br>
+                                        Dosen 2
+                                    </td>
+                                    <td>
+                                        Kelas 3 <br>
+                                        Mata Kuliah 3 <br>
+                                        Dosen 3
+                                    </td>
+                                    <td>
+                                        Kelas 4 <br>
+                                        Mata Kuliah 4 <br>
+                                        Dosen 4
+                                    </td>
+                                    <td>
+                                        Kelas 5 <br>
+                                        Mata Kuliah 5 <br>
+                                        Dosen 5
+                                    </td>
+                                    <td>
+                                        Kelas 6 <br>
+                                        Mata Kuliah 6 <br>
+                                        Dosen 6
+                                    </td>
+                                    <td>
+                                        Kelas 7 <br>
+                                        Mata Kuliah 7 <br>
+                                        Dosen 7
+                                    </td>
+                                    <td>
+                                        Kelas 8 <br>
+                                        Mata Kuliah 8 <br>
+                                        Dosen 8
+                                    </td>
+                                    <td>
+                                        Kelas 9 <br>
+                                        Mata Kuliah 9 <br>
+                                        Dosen 9
+                                    </td>
+                                    <td>
+                                        Kelas 10 <br>
+                                        Mata Kuliah 10 <br>
+                                        Dosen 10
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="sticky-column">13:00 - 14:40</td>
                                     <td>
                                         Kelas 1 <br>
                                         Mata Kuliah 1 <br>
@@ -264,7 +313,7 @@
                                     <td>Dosen 10</td>
                                 </tr>
                                 <tr>
-                                    <td>15:00 - 16:40</td>
+                                    <td class="sticky-column">15:00 - 16:40</td>
                                     <td>
                                         Kelas 1 <br>
                                         Mata Kuliah 1 <br>
@@ -281,7 +330,7 @@
                                     <td>Dosen 10</td>
                                 </tr>
                                 <tr>
-                                    <td>18:30 - 20:00</td>
+                                    <td class="sticky-column">18:30 - 20:00</td>
                                     <td>
                                         Kelas 1 <br>
                                         Mata Kuliah 1 <br>
@@ -298,7 +347,7 @@
                                     <td>Dosen 10</td>
                                 </tr>
                                 <tr>
-                                    <td>20:00 - 21:30</td>
+                                    <td class="sticky-column">20:00 - 21:30</td>
                                     <td>
                                         Kelas 1 <br>
                                         Mata Kuliah 1 <br>
