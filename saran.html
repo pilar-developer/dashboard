@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Pustaka TinyMCE -->
     <script src="js/tinymce/tinymce.min.js"></script>
-    <script>
+    <!-- <script>
         tinymce.init({
             selector: '#editor', // Targetkan elemen textarea dengan id "editor"
             height: 300,
@@ -28,7 +28,59 @@
             fontsize_formats: '8pt 10pt 11pt 12pt 14pt 18pt 24pt 36pt',
             branding: false, // Menghilangkan branding TinyMCE
         });
+    </script> -->
+    tambahkan underline disamping italic dan ukuran font size
+    <script>
+        tinymce.init({
+            selector: '#editor', // Targetkan elemen textarea dengan id "editor"
+            height: 300,
+            menubar: true,
+            plugins: 'lists link image media table code wordcount',
+            toolbar: 'undo redo | formatselect | bold italic | ' +
+                'alignleft aligncenter alignright alignjustify | ' +
+                'bullist numlist outdent indent | link image media | ' +
+                'fontsizeselect',
+            fontsize_formats: '8pt 10pt 11pt 12pt 14pt 18pt 24pt 36pt 40pt',
+            branding: false, // Menghilangkan branding TinyMCE
+
+            // Konfigurasi upload gambar dan video
+            images_upload_url: '/upload-image', // Endpoint untuk meng-upload file
+            media_upload_url: '/upload-media', // Endpoint untuk meng-upload video
+            automatic_uploads: true,
+            file_picker_types: 'image media',
+            file_picker_callback: function (callback, value, meta) {
+                if (meta.filetype === 'image' || meta.filetype === 'media') {
+                    const input = document.createElement('input');
+                    input.setAttribute('type', 'file');
+                    input.setAttribute('accept', meta.filetype === 'image' ? 'image/*' : 'video/*');
+                    input.onchange = function () {
+                        const file = this.files[0];
+                        const formData = new FormData();
+                        formData.append('file', file);
+
+                        // Kirim file ke server
+                        fetch(meta.filetype === 'image' ? '/upload-image' : '/upload-media', {
+                            method: 'POST',
+                            body: formData,
+                        })
+                            .then(response => response.json())
+                            .then(result => {
+                                if (result && result.location) {
+                                    callback(result.location, { alt: file.name });
+                                } else {
+                                    alert('Upload gagal.');
+                                }
+                            })
+                            .catch(() => {
+                                alert('Terjadi kesalahan saat meng-upload file.');
+                            });
+                    };
+                    input.click();
+                }
+            },
+        });
     </script>
+
 </head>
 
 <body>
