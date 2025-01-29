@@ -138,54 +138,55 @@
     <!-- Start Content -->
     <div class="content" id="content">
         <div class="row">
-            <div class="card">
+            <div class="card p-3">
                 <h5>
                     <i class='bx bx-user bx-tada-hover me-2'></i>
                     Detail Data Dosen
                 </h5>
                 <hr>
-                <div class="d-flex align-items-center mb-3">
-                     <img src="img/avatar/avatar4.jpeg" alt="User Avatar" style="width: 400px; height: 400px;"> 
-                     <div class="ms-3">
-                        <div class="flex-grow-1">
-                            <div class="border p-2 rounded mb-1"><strong>Nama :</strong>Dosen 1</div>
-                            <div class="border p-2 rounded mb-1"><strong>NIDN :</strong> 0000000001</div>
-                            <div class="border p-2 rounded mb-1"><strong>Jabatan :</strong> Pengajar</div>
-                            <div class="border p-2 rounded mb-1"><strong>Golongan :</strong> </div>
-                            <div class="border p-2 rounded mb-1"><strong>Jurusan :</strong> Teknik Informatika</div>
-                            <div class="border p-2 rounded mb-1">
-                                <i class='bx bx-phone'></i>
-                                0812345678910
-                            </div>
-                            <div class="border p-2 rounded mb-1">
-                                <i class='bx bx-envelope'></i>
-                                <a href="#" style="text-decoration: none;">dosen22@gmail.com</a>
-                            </div>
-                            <div class="border p-2 rounded">
-                                <i class='bx bx-home'></i>
-                                Link. Aku Terjatuh dan tak bisa RT. 011 RW. 003 Kel. Hati-Hati, Kec. Cilegon - Kota Cilegon</div>
+                <div class="d-flex flex-column flex-md-row align-items-center mb-3">
+                    <!-- <img src="img/avatar/avatar4.jpeg" alt="User Avatar" style="width: 400px; height: 400px;"
+                        class="mb-3 mb-md-0 me-md-3"> -->
+                        <img src="img/avatar/avatar4.jpeg" alt="User Avatar" class="img-fluid w-100 w-md-auto mb-3 mb-md-0 me-md-3" style="max-width: 400px; height: auto;">
+                    <div class="w-100">
+                        <div class="border p-2 rounded mb-1"><strong>Nama :</strong> Dosen 1</div>
+                        <div class="border p-2 rounded mb-1"><strong>NIDN :</strong> 0000000001</div>
+                        <div class="border p-2 rounded mb-1"><strong>Jabatan :</strong> Pengajar</div>
+                        <div class="border p-2 rounded mb-1"><strong>Golongan :</strong></div>
+                        <div class="border p-2 rounded mb-1"><strong>Jurusan :</strong> Teknik Informatika</div>
+                        <div class="border p-2 rounded mb-1">
+                            <i class='bx bx-phone'></i>
+                            0812345678910
                         </div>
-                     </div>                  
+                        <div class="border p-2 rounded mb-1">
+                            <i class='bx bx-envelope'></i>
+                            <a href="#" style="text-decoration: none;">dosen22@gmail.com</a>
+                        </div>
+                        <div class="border p-2 rounded">
+                            <i class='bx bx-home'></i>
+                            Link. Aku Terjatuh dan tak bisa RT. 011 RW. 003 Kel. Hati-Hati, Kec. Cilegon - Kota Cilegon
+                        </div>
+                    </div>
                 </div>
-
             </div>
 
-            <div class="card">
-                <h5>
-                    <i class='bx bxs-graduation'></i>
-                    Pendidikan
-                </h5>
-                <hr>
-                <div class="table-responsive">
-                    <table class="table table-sm-2">
-                        <thead class="table-success">
-                            <tr>
-                                <th>Instansi</th>
-                                <th>Jurusan</th>
-                                <th>Gelar Akademik</th>
-                                <th>Tahun Lulus</th>
-                                <th>Jenjang</th>
-                            </tr>
+            <div class="row mt-4">
+                <div class="card">
+                    <h5>
+                        <i class='bx bxs-graduation'></i>
+                        Pendidikan
+                    </h5>
+                    <hr>
+                    <div class="table-responsive">
+                        <table class="table table-sm-2">
+                            <thead class="table-success">
+                                <tr>
+                                    <th>Instansi</th>
+                                    <th>Jurusan</th>
+                                    <th>Gelar Akademik</th>
+                                    <th>Tahun Lulus</th>
+                                    <th>Jenjang</th>
+                                </tr>
                             <tbody>
                                 <tr>
                                     <td>Universitas Sriwijaya</td>
@@ -202,8 +203,146 @@
                                     <td>S1</td>
                                 </tr>
                             </tbody>
-                        </thead>
-                    </table>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="card">
+                    <h5>
+                        <i class='bx bxs-graduation'></i>
+                        Riwayat Mengajar
+                    </h5>
+                    <hr>
+                    <div class="table-responsive">
+                        <table id="MyScript" class="table table-sm-2">
+                            <thead class="table-success">
+                                <tr>
+                                    <th>Kelas</th>
+                                    <th>Mata Kuliah</th>
+                                    <th>SKS</th>
+                                    <th>Semester</th>
+                                    <th>EUB</th>
+                                    <th>SKS</th>
+                                    <th>Hari</th>
+                                    <th>Waktu</th>
+                                    <th>Status</th>
+                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td>TI-01</td>
+                                        <td>Pemrograman Dasar</td>
+                                        <td>4</td>
+                                        <td>Semester 1</td>
+                                        <td>EUB-01</td>
+                                        <td>4</td>
+                                        <td>Selasa</td>
+                                        <td>08:00 - 10:00</td>
+                                        <td>Aktif</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TI-02</td>
+                                        <td>Kalkulus</td>
+                                        <td>3</td>
+                                        <td>Semester 2</td>
+                                        <td>EUB-02</td>
+                                        <td>3</td>
+                                        <td>Rabu</td>
+                                        <td>13:00 - 15:00</td>
+                                        <td>Aktif</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TI-03</td>
+                                        <td>Basis Data</td>
+                                        <td>4</td>
+                                        <td>Semester 1</td>
+                                        <td>EUB-03</td>
+                                        <td>4</td>
+                                        <td>Kamis</td>
+                                        <td>16:00 - 18:00</td>
+                                        <td>Aktif</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TI-04</td>
+                                        <td>Pemrograman Web</td>
+                                        <td>4</td>
+                                        <td>Semester 2</td>
+                                        <td>EUB-04</td>
+                                        <td>4</td>
+                                        <td>Jumat</td>
+                                        <td>10:00 - 12:00</td>
+                                        <td>Tidak Aktif</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TI-05</td>
+                                        <td>Sistem Operasi</td>
+                                        <td>4</td>
+                                        <td>Semester 1</td>
+                                        <td>EUB-05</td>
+                                        <td>4</td>
+                                        <td>Sabtu</td>
+                                        <td>14:00 - 16:00</td>
+                                        <td>Aktif</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>TI-06</td>
+                                        <td>Kecakapan Teknik</td>
+                                        <td>4</td>
+                                        <td>Semester 2</td>
+                                        <td>EUB-06</td>
+                                        <td>4</td>
+                                        <td>Minggu</td>
+                                        <td>18:00 - 20:00</td>
+                                        <td>Tidak Aktif</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TI-07</td>
+                                        <td>Sistem Basis Data</td>
+                                        <td>2</td>
+                                        <td>Semester 4</td>
+                                        <td>EUB-07</td>
+                                        <td>4</td>
+                                        <td>Senin</td>
+                                        <td>12:00 - 14:00</td>
+                                        <td>Tidak Aktif</td>
+                                    </tr>
+                                </tbody>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="card">
+                    <h5>
+                        <i class='bx bx-bar-chart-alt'></i>
+                        Pengalaman Kerja
+                    </h5>
+                    <hr>
+                    <div class="content-scrollable" style="max-height: 300px; overflow-y: auto;  padding-bottom: 5px;">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="ms-3">
+                                <strong>PT Suka-Sukalah</strong>
+                                <span class="text-muted ms-2">02 Agustus 2018 - Hingga Saat Ini</span>
+                                <p>
+                                    Staff Tata Usaha
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="ms-3">
+                                <strong>PT Sukses Makmur</strong>
+                                <span class="text-muted ms-2">01 Mei 2017 - 02 Agustus 2018</span>
+                                <p>
+                                    Staff Tata Usaha
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
